@@ -1,0 +1,7 @@
+2021-05-06 11:03:53,308 INFO com.tweetapp.TweetAppApplication [main] Starting TweetAppApplication using Java 1.8.0_201 on Lab-637485447425033683-1 with PID 7908 (C:\Users\User\Desktop\799431Tweetapp\TweetApp-SpringBoot\target\classes started by User in C:\Users\User\Desktop\799431Tweetapp\TweetApp-SpringBoot)
+2021-05-06 11:03:53,338 INFO com.tweetapp.TweetAppApplication [main] The following profiles are active: nonprod
+2021-05-06 11:04:03,540 INFO com.tweetapp.TweetAppApplication [main] Started TweetAppApplication in 11.165 seconds (JVM running for 12.181)
+2021-05-06 11:11:07,206 INFO com.tweetapp.kafka.Producer [http-nio-8090-exec-1] #### -> Producing message -> My First Tweet
+2021-05-06 11:11:07,414 INFO com.tweetapp.kafka.Producer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] #### -> Consumed message -> My First Tweet
+2021-05-06 18:04:57,486 INFO com.tweetapp.kafka.Producer [http-nio-8090-exec-10] #### -> Producing message -> Hello all
+2021-05-06 18:04:57,541 INFO com.tweetapp.kafka.Producer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] #### -> Consumed message -> Hello all
