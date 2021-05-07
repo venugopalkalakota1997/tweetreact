@@ -53,7 +53,7 @@ public class TweetsServiceImplTest {
 		entity.setReply(replies);
 		entity.setTweet("Hi");
 		entity.setTweetId(1l);
-		entity.setUserTweetId("finny");
+		entity.setUserTweetId("venu");
 		tweets.add(entity);
 		Mockito.when(tweetsRepo.findAll()).thenReturn(tweets);
 		TweetResponse actualResponse = tweetsServiceImpl.getAllTweets();
@@ -88,10 +88,10 @@ public class TweetsServiceImplTest {
 		entity.setReply(replies);
 		entity.setTweet("Hi");
 		entity.setTweetId(1l);
-		entity.setUserTweetId("finny");
+		entity.setUserTweetId("venu");
 		tweets.add(entity);
-		Mockito.when(tweetsRepo.findByUserName("finny")).thenReturn(tweets);
-		TweetResponse actualResponse = tweetsServiceImpl.getAllTweetsByUserName("finny");
+		Mockito.when(tweetsRepo.findByUserName("venu")).thenReturn(tweets);
+		TweetResponse actualResponse = tweetsServiceImpl.getAllTweetsByUserName("venu");
 		assertEquals(response.getStatusMessage(), actualResponse.getStatusMessage());
 	}
 
@@ -99,8 +99,8 @@ public class TweetsServiceImplTest {
 	public void getAllTweetsbyUserNameTestException() {
 		TweetResponse response = new TweetResponse();
 		response.setStatusMessage("FAILURE");
-		Mockito.when(tweetsRepo.findByUserName("finny")).thenThrow(InternalServerError.class);
-		TweetResponse actualResponse = tweetsServiceImpl.getAllTweetsByUserName("finny");
+		Mockito.when(tweetsRepo.findByUserName("venu")).thenThrow(InternalServerError.class);
+		TweetResponse actualResponse = tweetsServiceImpl.getAllTweetsByUserName("venu");
 		assertNotEquals(response.getStatusMessage(), actualResponse.getStatusMessage());
 	}
 
@@ -116,9 +116,9 @@ public class TweetsServiceImplTest {
 		tweet.setReply(replies);
 		tweet.setTweet("");
 		tweet.setTweetId(1l);
-		tweet.setUserTweetId("finny");
+		tweet.setUserTweetId("venu");
 		request.setTweet(tweet);
-		TweetResponse actualResponse = tweetsServiceImpl.addTweet(request, "finny");
+		TweetResponse actualResponse = tweetsServiceImpl.addTweet(request, "venu");
 		assertEquals(response.getStatusMessage(), actualResponse.getStatusMessage());
 	}
 
@@ -134,12 +134,12 @@ public class TweetsServiceImplTest {
 		tweet.setReply(replies);
 		tweet.setTweet("");
 		tweet.setTweetId(1l);
-		tweet.setUserTweetId("finny");
+		tweet.setUserTweetId("venu");
 		request.setTweet(tweet);
 		TweetsEntity entity = new TweetsEntity();
 		entity.setTweetId(1l);
 		Mockito.when(tweetsRepo.findTopByOrderByTweetIdDesc()).thenReturn(entity);
-		TweetResponse actualResponse = tweetsServiceImpl.addTweet(request, "finny");
+		TweetResponse actualResponse = tweetsServiceImpl.addTweet(request, "venu");
 		assertEquals(response.getStatusMessage(), actualResponse.getStatusMessage());
 	}
 
@@ -156,10 +156,10 @@ public class TweetsServiceImplTest {
 		tweet.setReply(replies);
 		tweet.setTweet("");
 		tweet.setTweetId(1l);
-		tweet.setUserTweetId("finny");
+		tweet.setUserTweetId("venu");
 		request.setTweet(tweet);
 		Mockito.when(tweetsRepo.findTopByOrderByTweetIdDesc()).thenThrow(InternalServerError.class);
-		TweetResponse actualResponse = tweetsServiceImpl.addTweet(request, "finny");
+		TweetResponse actualResponse = tweetsServiceImpl.addTweet(request, "venu");
 		assertEquals(response.getStatusMessage(), actualResponse.getStatusMessage());
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -170,7 +170,7 @@ public class TweetsServiceImplTest {
 	public void deleteTweetTest() {
 		TweetResponse response = new TweetResponse();
 		response.setStatusMessage("SUCCESS");
-		TweetResponse actualResponse = tweetsServiceImpl.deleteTweet("finny",1l);
+		TweetResponse actualResponse = tweetsServiceImpl.deleteTweet("venu",1l);
 		assertEquals(response.getStatusMessage(), actualResponse.getStatusMessage());
 	}
 	
@@ -179,7 +179,7 @@ public class TweetsServiceImplTest {
 		TweetResponse response = new TweetResponse();
 		response.setStatusMessage("FAILED");
 		doThrow(InternalServerError.class).when(tweetsRepo).deleteByTweetId(1l);
-		TweetResponse actualResponse = tweetsServiceImpl.deleteTweet("finny",1l);
+		TweetResponse actualResponse = tweetsServiceImpl.deleteTweet("venu",1l);
 		assertEquals(response.getStatusMessage(), actualResponse.getStatusMessage());
 	}
 	

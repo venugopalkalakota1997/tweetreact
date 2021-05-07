@@ -62,8 +62,8 @@ public class UsersServiceImplTest {
 		UserResponse userResponse = new UserResponse();
 		UserRequest request = new UserRequest();
 		userResponse.setStatusMessage("SUCCESS");
-		Mockito.when(usersService.searchUsers("finny")).thenReturn(userResponse);
-		UserResponse actualResponse = usersController.searchUsers("finny");
+		Mockito.when(usersService.searchUsers("venu")).thenReturn(userResponse);
+		UserResponse actualResponse = usersController.searchUsers("venu");
 		assertEquals(userResponse.getStatusMessage(), actualResponse.getStatusMessage());
 	}
 }

@@ -46,8 +46,8 @@ public class TweetsControllerTest {
 	public void getAllTweetsUser() {
 		TweetResponse tweetResponse = new TweetResponse();
 		tweetResponse.setStatusMessage("SUCCESS");
-		Mockito.when(tweetsService.getAllTweetsByUserName("finny")).thenReturn(tweetResponse);
-		TweetResponse actualResponse = tweetController.getAllTweetsUser("finny");
+		Mockito.when(tweetsService.getAllTweetsByUserName("venu")).thenReturn(tweetResponse);
+		TweetResponse actualResponse = tweetController.getAllTweetsUser("venu");
 		assertEquals(tweetResponse.getStatusMessage(),actualResponse.getStatusMessage());
 	}
 	
@@ -58,12 +58,12 @@ public class TweetsControllerTest {
 		TweetRequest request = new TweetRequest();
 		tweetResponse.setStatusMessage("SUCCESS");
 		actualResponse.setStatusMessage("SUCCESS");
-		Mockito.when(tweetsService.addTweet(request,"finny")).thenReturn(tweetResponse);
+		Mockito.when(tweetsService.addTweet(request,"venu")).thenReturn(tweetResponse);
 		
 		Mockito.doNothing().when(producer).sendMessage(Mockito.anyString());
 //		tweetController.producer = producer;
 		
-//		TweetResponse actualResponse = tweetController.addTweet(request,"finny");
+//		TweetResponse actualResponse = tweetController.addTweet(request,"venu");
 		assertEquals(tweetResponse.getStatusMessage(),actualResponse.getStatusMessage());
 	}
 	
@@ -71,8 +71,8 @@ public class TweetsControllerTest {
 	public void deleteTweet() {
 		TweetResponse tweetResponse = new TweetResponse();
 		tweetResponse.setStatusMessage("SUCCESS");
-		Mockito.when(tweetsService.deleteTweet("finny",1l)).thenReturn(tweetResponse);
-		TweetResponse actualResponse = tweetController.deleteTweet("finny",1l);
+		Mockito.when(tweetsService.deleteTweet("venu",1l)).thenReturn(tweetResponse);
+		TweetResponse actualResponse = tweetController.deleteTweet("venu",1l);
 		assertEquals(tweetResponse.getStatusMessage(),actualResponse.getStatusMessage());
 	}
 	
