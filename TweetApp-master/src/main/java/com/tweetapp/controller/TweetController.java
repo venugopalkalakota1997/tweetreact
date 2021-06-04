@@ -17,7 +17,7 @@ import com.tweetapp.response.TweetResponse;
 import com.tweetapp.service.TweetsService;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@RequestMapping("/tweet")
 public class TweetController {
 
 	@Autowired

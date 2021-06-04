@@ -15,7 +15,7 @@ import com.tweetapp.response.UserResponse;
 import com.tweetapp.service.UsersService;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@RequestMapping("/tweet")
 public class UsersController {
 	
 

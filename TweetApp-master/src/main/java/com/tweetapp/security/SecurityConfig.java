@@ -61,8 +61,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //         // ... here goes your custom security configuration
 //         authorizeRequests().
 //         antMatchers(AUTH_WHITELIST).permitAll().
-		httpSecurity.csrf().disable().httpBasic().and().authorizeRequests().antMatchers("/authenticate").permitAll()
-				.antMatchers("/register").permitAll().antMatchers("/forgetPassword").permitAll().antMatchers(AUTH_WHITELIST).permitAll().antMatchers(HttpMethod.OPTIONS, "/**").permitAll().anyRequest()
+		httpSecurity.csrf().disable().httpBasic().and().authorizeRequests().antMatchers("/tweet/authenticate").permitAll()
+				.antMatchers("/tweet/register").permitAll().antMatchers("/tweet/forgetPassword").permitAll().antMatchers(AUTH_WHITELIST).permitAll().antMatchers(HttpMethod.OPTIONS, "/**").permitAll().anyRequest()
 				.authenticated().and().addFilter(new JwtAuthorizationFilter(authenticationManager()));
 
 	}
