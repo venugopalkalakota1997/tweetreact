@@ -1,0 +1,9 @@
+amazon:
+  aws:
+    accesskey: ''
+    region: ap-south-1
+    secretkey: ''
+  dynamodb:
+    endpoint: 'dynamodb.ap-south-1.amazonaws.com'
+server:
+  port: 8080
